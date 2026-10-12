@@ -177,7 +177,7 @@ tfoot .btn{width:100%}
   table{display:none}
   .tier-slider{display:block}
 }
-.tt{display:grid;grid-auto-flow:column;grid-auto-columns:min(84%,380px);grid-template-rows:repeat(16,auto);gap:0 14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 calc(-1 * var(--gutter));padding:0 var(--gutter) 6px;scroll-padding:0 var(--gutter);overscroll-behavior-x:contain}
+.tt{display:grid;grid-auto-flow:column;grid-auto-columns:min(88%,400px);grid-template-rows:repeat(16,auto);gap:0 14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 calc(-1 * var(--gutter));padding:0 var(--gutter) 6px;scroll-padding:0 var(--gutter);overscroll-behavior-x:contain}
 .tt::-webkit-scrollbar{display:none}
 .tt:focus-visible{outline-offset:-3px}
 /* every card takes the same 16 row tracks, so lines run straight across the cards like one table */
@@ -233,3 +233,8 @@ footer p{margin:0}
 .trow dd .bar{display:block;flex:0 0 100%;width:100%;min-width:0}
 .join{color:var(--white);background:var(--black);display:inline-block;justify-self:end;padding:.35em .6em .4em}
 .join::first-line{color:var(--white)}
+.bar{height:36px;line-height:36px;border-radius:8px;overflow:hidden;background:rgba(0,0,0,.16);text-align:center}
+.bar span{padding:0;font-weight:800;font-size:1.05rem}
+.trow dd .bar{width:calc(100% + 20px);flex:0 0 calc(100% + 20px);margin:0 -10px}
+.bar{background:rgba(255,255,255,.62)}
+.trow dd .bar{text-align:center}
