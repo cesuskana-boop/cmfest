@@ -260,3 +260,35 @@ footer p{margin:0}
 .ideas{display:inline-flex;gap:8px;justify-content:center;flex-wrap:wrap}
 .idea-chip{display:inline-grid;place-items:center;min-width:40px;height:40px;padding:0 6px;border-radius:50%;background:var(--black);color:var(--yellow);font-weight:800;font-size:.95rem;text-decoration:none;line-height:1}
 .idea-chip:hover,.idea-chip:focus-visible{background:var(--yellow);color:var(--black);outline:3px solid var(--black);outline-offset:2px}
+.ideas{flex-direction:column;align-items:center;gap:8px}
+.idea-chip{display:inline-flex;align-items:center;gap:10px;min-width:0;width:max-content;max-width:100%;height:auto;min-height:40px;padding:6px 16px 6px 12px;border-radius:var(--r-btn);font-size:.95rem;font-weight:600;color:var(--white);text-align:left}
+.idea-chip b{color:var(--yellow);font-weight:800}
+.idea-chip:hover b,.idea-chip:focus-visible b{color:var(--black)}
+.idea-chip:hover,.idea-chip:focus-visible{color:var(--black)}
+
+/* contact form */
+.contact{align-items:start}
+@media (min-width:900px){.contact{grid-template-columns:5fr 6fr;gap:clamp(32px,6vw,88px)}}
+.contact .join{justify-self:auto;text-align:left;font-size:clamp(1.4rem,2.6vw,2rem);margin-top:1.2em;display:inline-block;color:var(--white);background:var(--black);padding:0}
+.cform{display:grid;gap:16px;background:rgba(0,0,0,.82);border:1.5px solid var(--yellow);border-radius:var(--r-card);padding:clamp(18px,3vw,32px)}
+.pair{display:grid;gap:16px}
+@media (min-width:640px){.pair{grid-template-columns:1fr 1fr}}
+.field{display:grid;gap:6px;min-width:0}
+.field label{font-weight:600}
+.req{color:var(--yellow)}
+.field input,.field textarea{width:100%;font:inherit;font-size:1rem;color:var(--white);background:#1a1819;border:2px solid #5a5657;border-radius:var(--r-btn);padding:.7rem .85rem;min-height:48px}
+.field textarea{resize:vertical;min-height:110px}
+.field input:focus,.field textarea:focus{outline:3px solid var(--yellow);outline-offset:1px;border-color:var(--yellow)}
+.field input[aria-invalid="true"]{border-color:#ff8a80}
+.err{margin:0;color:#ff8a80;font-size:.9rem}
+.err:empty{display:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.captcha input{max-width:140px}
+.cform .note{margin:0}
+.cform .btn{justify-self:start;min-width:160px}
+.cform .btn:disabled{opacity:.6;cursor:default}
+.status{margin:0;font-weight:600}
+.status:empty{display:none}
+.status.ok{color:var(--yellow)}
+.status.bad{color:#ff8a80}
+.status a{color:inherit}
