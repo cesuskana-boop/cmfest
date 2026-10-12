@@ -65,17 +65,16 @@ p{margin:0 0 1em}
 .sub{font-size:clamp(1.25rem,2.4vw,1.7rem);font-weight:800;margin:0 0 .6em}
 
 /* cover */
-.cover{position:relative;overflow:hidden;isolation:isolate;background:var(--black);min-height:560px}
-.cover-art{position:absolute;inset:0;z-index:-1;background-repeat:no-repeat;background-position:right bottom;background-size:auto 100%;
+.cover{position:relative;overflow:hidden;isolation:isolate;background:var(--black);min-height:560px;min-height:calc(100vh - 64px);min-height:calc(100svh - 64px);display:flex;align-items:center}
+.cover-art{position:absolute;inset:0;z-index:-1;background-repeat:no-repeat;background-position:right bottom;background-size:cover;
   background-image:url(../assets/art/cover-yellow.svg),url(../assets/art/cover-white.svg),url(../assets/art/cover-grey.svg)}
-.cover-in{position:relative;padding:clamp(40px,7vw,96px) var(--gutter) clamp(120px,14vw,200px);max-width:calc(var(--max) + 2*var(--gutter))}
-.cover .big-logo{width:clamp(180px,26vw,340px);margin-bottom:clamp(36px,7vw,96px)}
-.cover h1{font-size:clamp(2.4rem,6.2vw,5rem);line-height:1.02}
-.cover .date{margin:.35em 0 0;color:var(--yellow);font:800 italic clamp(2.2rem,5.6vw,4.4rem)/1 var(--font);letter-spacing:-.01em}
-.cover .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(24px,3vw,40px)}
+.cover-in{position:relative;width:100%;padding:clamp(24px,6vh,96px) var(--gutter) clamp(120px,14vw,200px);max-width:calc(var(--max) + 2*var(--gutter))}
+.cover .big-logo{width:clamp(150px,min(26vw,30vh),560px);margin-bottom:clamp(20px,5vh,96px)}
+.cover h1{font-size:clamp(2.1rem,min(6.2vw,8vh),7rem);line-height:1.02}
+.cover .date{margin:.35em 0 0;color:var(--yellow);font:800 italic clamp(2rem,min(5.6vw,7.2vh),6rem)/1 var(--font);letter-spacing:-.01em}
+.cover .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(18px,3.5vh,40px)}
 .cover-tag{position:absolute;top:0;bottom:0;right:clamp(6px,2vw,28px);display:flex;align-items:center;writing-mode:vertical-rl;transform:rotate(180deg);font:800 italic clamp(3.6rem,9.5vw,8.5rem)/1 var(--font);letter-spacing:.08em;color:transparent;-webkit-text-stroke:2px #fff;pointer-events:none;user-select:none}
 .cover-by{position:absolute;left:var(--gutter);bottom:clamp(18px,3vw,36px);width:clamp(96px,12vw,150px)}
-@media (min-width:900px){.cover{min-height:max(640px,52vw)}.cover-art{background-size:cover;background-position:right bottom}}
 @media (max-width:899px){.cover-tag{opacity:.35}}
 
 /* two-column slide, as slides 2-3 of the deck */
@@ -238,3 +237,13 @@ footer p{margin:0}
 .trow dd .bar{width:calc(100% + 20px);flex:0 0 calc(100% + 20px);margin:0 -10px}
 .bar{background:rgba(255,255,255,.62)}
 .trow dd .bar{text-align:center}
+
+/* scroll cue under the cover on phones and tablets */
+.cue{display:none}
+@media (max-width:860px){
+  .cue{display:grid;place-items:center;position:absolute;left:50%;bottom:clamp(14px,3vh,28px);width:48px;height:48px;margin-left:-24px;border-radius:50%;background:var(--yellow);color:var(--black);border:3px solid var(--black);font-size:1.5rem;line-height:1;text-decoration:none;animation:cue 1.8s ease-in-out infinite}
+}
+@keyframes cue{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+@media (prefers-reduced-motion:reduce){.cue{animation:none}}
+@media (min-width:861px){.cover{align-items:flex-start}.cover-in{padding-bottom:0}}
+@media (min-width:861px){.cover .btn{font-size:clamp(1rem,1.9vh,1.5rem);min-height:clamp(48px,6vh,72px);padding-inline:clamp(1.5rem,2.4vh,2.6rem)}}
