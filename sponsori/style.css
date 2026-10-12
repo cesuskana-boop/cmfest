@@ -247,3 +247,12 @@ footer p{margin:0}
 @media (prefers-reduced-motion:reduce){.cue{animation:none}}
 @media (min-width:861px){.cover{align-items:flex-start}.cover-in{padding-bottom:0}}
 @media (min-width:861px){.cover .btn{font-size:clamp(1rem,1.9vh,1.5rem);min-height:clamp(48px,6vh,72px);padding-inline:clamp(1.5rem,2.4vh,2.6rem)}}
+
+/* phones and small tablets: normal-height cover, plain "next section" arrows */
+.next{display:none}
+@media (max-width:860px){
+  .cover{display:block;min-height:560px}
+  .cue{animation:none}
+  .next{display:grid;place-items:center;position:absolute;left:50%;bottom:20px;width:46px;height:46px;margin-left:-23px;border-radius:50%;background:var(--yellow);color:var(--black);border:3px solid var(--black);font-size:1.4rem;line-height:1;text-decoration:none}
+  .ylw .next,.grey .next{background:var(--black);color:var(--yellow);border-color:var(--black)}
+}
