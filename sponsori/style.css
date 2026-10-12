@@ -229,3 +229,7 @@ footer p{margin:0}
   .pic:has(.splash) img{border-radius:var(--r-photo) var(--r-photo) 0 0}
 }
 @media (min-width:861px){.car{width:48px;height:29px}}
+.trow dd{align-self:stretch}
+.trow dd .bar{display:block;flex:0 0 100%;width:100%;min-width:0}
+.join{color:var(--white);background:var(--black);display:inline-block;justify-self:end;padding:.35em .6em .4em}
+.join::first-line{color:var(--white)}
