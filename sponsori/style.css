@@ -171,21 +171,30 @@ tfoot td{padding:20px 10px 0;border:0}
 tfoot .btn{width:100%}
 .tnotes{margin-top:26px;max-width:72ch;font-size:.95rem}
 .tnotes p{margin:0 0 .5em}
+/* tiers as a slider on phones and tablets; the table stays for wide screens */
+.tier-slider{display:none;margin-top:26px}
 @media (max-width:860px){
-  table,thead,tbody,tfoot,tr,th,td{display:block}
-  thead tr:first-child>th:first-child{display:none}
-  thead tr{display:grid;gap:10px;margin-bottom:10px}
-  thead th{padding:0}
-  tbody tr{background:var(--grey-dk);border-radius:var(--r-card);margin-bottom:12px;padding:6px 18px 12px}
-  tbody th{width:auto;border:0;padding:12px 0 6px}
-  tbody td{border:0;padding:3px 0;display:flex;gap:12px;background:none;text-align:left;align-items:center}
-  tbody td::before{content:attr(data-label);flex:none;width:6.5em;font-weight:800}
-  tbody tr:last-child th,tbody tr:last-child td{border:0}
-  .bar{flex:1}
-  tfoot tr{display:grid;gap:10px}
-  tfoot th{display:none}
-  tfoot td{padding:0}
+  table{display:none}
+  .tier-slider{display:block}
 }
+.tt{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 calc(-1 * var(--gutter));padding:0 var(--gutter) 6px;scroll-padding:0 var(--gutter);overscroll-behavior-x:contain}
+.tt::-webkit-scrollbar{display:none}
+.tt:focus-visible{outline-offset:-3px}
+.tcard{flex:0 0 min(84%,380px);scroll-snap-align:start;background:var(--grey-dk);border-radius:var(--r-card);padding:16px 18px 20px;display:flex;flex-direction:column}
+.tcard .tier{margin-bottom:6px;font-size:1.1rem}
+.tcard dl{margin:0 0 18px;flex:1}
+.trow{padding:9px 0;border-top:1px solid rgba(0,0,0,.3)}
+.trow:first-child{border-top:0}
+.trow dt{font-size:.74rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
+.trow dd{margin:0;display:flex;align-items:center;min-height:30px;font-weight:600}
+.trow dd .bar{flex:1}
+.tcard .btn{width:100%}
+.tctl{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 0 16px}
+.tctl>button{width:48px;height:48px;border-radius:50%;border:0;background:var(--black);color:var(--yellow);font-size:1.4rem;line-height:1;cursor:pointer}
+.tctl>button:disabled{opacity:.35;cursor:default}
+.tdots{display:flex;gap:10px}
+.tdots button{width:14px;height:14px;padding:0;border-radius:50%;border:2px solid var(--black);background:transparent;cursor:pointer}
+.tdots button[aria-current="true"]{background:var(--black)}
 
 /* organisers + contacts */
 .center{text-align:center}
@@ -206,3 +215,4 @@ footer .in{max-width:var(--max);margin:0 auto;display:flex;flex-wrap:wrap;gap:12
 footer p{margin:0}
 
 #par-cmf .slide-foot{margin-top:clamp(110px,14vw,170px)}
+@media (max-width:700px){.slide{padding-bottom:84px}.slide::after{background-size:560px auto}.slide-foot{position:relative;z-index:1}#par-cmf .slide-foot{margin-top:40px}}
